@@ -1,0 +1,201 @@
+:root {
+    /* color variation */
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+    /* font weights */
+    --font-regular: 400;
+    --font-semi: 500;
+    --font-bold: 700;
+    /* font family */
+    --font-spartan: 'League Spartan', sans-serif;
+}
+
+body {
+    font-family: var(--font-spartan);
+    font-size: 0.9375rem;
+    width: 100vw;
+    height: 100vh;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;;
+    place-items: center;
+}
+main {
+    background-color: var(--white);
+    background-image: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
+    background-repeat: no-repeat;
+    padding: 4rem;
+}
+.main__top {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 2rem;
+}
+.main__top__info {
+    grid-column: 1;
+    margin-right: 5rem ;
+    align-items: center;
+    
+}
+.main__top__info h1 {
+    color: var(--very-dark-magenta);
+    width: 12rem;
+    line-height: 1.8rem;
+
+}
+.main__top__info p {
+    color: var(--dark-grayish-magenta);
+    width: 23rem;
+    margin-top: 1rem;
+}
+.main__top__stars {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+.main__top__stars__rated {
+    background-color: var(--light-grayish-magenta);
+    width: 15rem;
+    border-radius: 0.3rem;
+    margin-bottom: .4rem;
+    padding: 0.3rem 0;
+    display: flex;
+    align-items: center;
+}
+.main__top__stars__rated:nth-child(1) {
+    margin-right: 4rem;
+}
+.main__top__stars__rated:nth-child(2) {
+    margin-right: 2rem;
+}
+.rating {
+    display: flex;
+    align-items:center;
+    margin: 0 0.7rem;
+}
+.rating img {
+    width: 0.6rem;
+    height: 0.6rem;
+    margin: 0.2rem;
+}
+.main__top__stars__rated p {
+    font-size: 0.6rem;
+    color: var(--very-dark-magenta);
+    font-weight: var(--font-bold);
+}
+
+/* Bottom of the page */
+.main__bottom {
+    display: flex;
+    gap: 1.5rem;
+}
+.card {
+    padding: 1.5rem 2.1rem;
+    background-color: var(--very-dark-magenta);
+    border-radius: 0.5rem;
+    color: var(--white);
+    width: 18rem;
+    font-weight: var(--font-regular);
+    font-size: 0.8rem;
+}
+.card:nth-child(2) {
+    margin: 1rem 0 -1rem 0;
+}
+.card:nth-child(3) {
+    margin: 2rem 0 -2rem 0;
+}
+.card__info {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.card__avatar img {
+    width: 2rem;
+    border-radius: 50%;
+}
+.card__name span{
+    font-size: 0.7rem;
+    font-weight: var(--font-semi);
+}
+.card__name p{
+    font-size: 0.65rem;
+    font-weight: var(--font-regular);
+    line-height: 0.3rem;
+    color: var(--soft-pink)
+}
+
+/* Attribution styles */
+.attribution {
+    font-size: 11px;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+
+/* responsive styles for mobile with of 375px */
+@media screen and (max-width:400px) {
+    body {
+        max-width: 400px;
+    }
+    main {
+        background-image: url(./images/bg-pattern-top-mobile.svg), url(./images/bg-pattern-bottom-mobile.svg);  
+    }
+    .main__top {
+        grid-template-columns: 100%;
+        align-items: center;
+        justify-items: center;
+    }
+    .main__top__info {
+        margin-right: 0;
+        justify-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .main__top__info h1 {
+        text-align: center;
+    }
+    .main__top__info p {
+        text-align: center;
+        width: auto;
+        margin: 1 0.5rem 1.5rem 0.5rem;
+    }
+
+    .main__top__stars {
+        grid-column: 1;
+    }
+    .main__top__stars__rated {
+        width: 20rem;
+        flex-direction: column;
+        padding: 0.5rem 0;
+    }
+    .main__top__stars__rated p {
+        font-size: 0.8rem;
+    }
+    .main__top__stars__rated:nth-child(1) {
+        margin-right: 0;
+    }
+    .main__top__stars__rated:nth-child(2) {
+        margin-right: 0;
+    }
+    .rating img {
+        width: 0.8rem;
+        height: 0.8rem;
+    }
+
+    /* main bottom */
+    .main__bottom {
+        flex-direction: column;
+        align-items: center;
+        gap: .3rem;
+    }
+    .card {
+        width: 20rem;
+    }
+
+}
